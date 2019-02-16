@@ -3,6 +3,7 @@ require('dotenv').config(); // Sets up dotenv as soon as our application starts
 const express = require('express');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors')
 
 const app = express();
 const router = express.Router();
@@ -11,6 +12,14 @@ const routes = require('./routes/index.js');
 
 const environment = process.env.NODE_ENV; // development
 const stage = require('./config')[environment];
+
+var corsOptions = {
+  origin: 'http://localhost:4200',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions))
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({

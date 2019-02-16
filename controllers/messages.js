@@ -12,7 +12,10 @@ module.exports = {
 
       Message.create(messageProp)
           .then((Message) => {
-              res.status(200).send(Message)
+            res.status(200).json({
+              'message' : Message,
+              'status' : 200
+            });
           })
           .catch((error)=> res.status(400).json(error))
   });

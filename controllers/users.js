@@ -30,8 +30,14 @@ module.exports = {
                 // We could compare passwords in our model instead of below
                 bcrypt.compare(password, user.password).then(match => {
                   if (match) {
+                    const payload = { user: user.name };
+                    const options = { expiresIn: '2d', issuer: 'tweeter.com' };
+                    const secret = process.env.JWT_SECRET;
+                    const token = jwt.sign(payload, secret, options);
+
                     result.status = status;
-                    result.result = user;
+                    result.token = token
+
                   } else {
                     status = 401;
                     result.status = status;

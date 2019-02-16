@@ -8,7 +8,7 @@ module.exports = {
       const token = req.headers.authorization.split(' ')[1]; // Bearer <token>
       const options = {
         expiresIn: '2d',
-        issuer: 'Twitter'
+        issuer: 'tweeter.com'
       };
       try {
         // verify makes sure that the token hasn't expired and has been issued by us
@@ -20,7 +20,7 @@ module.exports = {
         next();
       } catch (err) {
         // Throw an error just in case anything goes wrong with verification
-        throw new Error(err);
+        res.status(401).send(err);
       }
     } else {
       result = {
