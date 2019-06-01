@@ -1,9 +1,3 @@
-# Lap Record Angular Back-end
+# Security Excercise
 
-To learn more about MEAN stack development all students had to build a NodeJS RESTfull API coupled to a Mongo and Neo4j database. I decided to build a web app for car enthusiast to share their fastest lap times for others to see. 
-
-## I learned
-
-- How construct a RESTFull API with Node
-- How to use MongoDB and Mongoose to presist data
-- How graph databases work and when they are usefull with Neo4j
+To demonstrate how a typical Cross Site Scripting attack works, we decided to build a very simple CRUD based NodeJS api with an Angular front-end. By disabling Angular's build-in sanitization system, we where able to run code that was put in via a text field to steal log-in tokens from users
