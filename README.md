@@ -1,6 +1,6 @@
 # Lap Record Angular Back-end
 
-To learn more about MEAN stack development all students had to build a NodeJS RESTfull API coupled to a Mongo and Neo4j database. I decided to build a web app for car enthusiast to share their fastest lap times for other to see. 
+To learn more about MEAN stack development all students had to build a NodeJS RESTfull API coupled to a Mongo and Neo4j database. I decided to build a web app for car enthusiast to share their fastest lap times for others to see. 
 
 ## I learned
 
